@@ -1,8 +1,7 @@
 const bcryptjs = require("bcryptjs");
 const bcrypt = require("bcrypt")
 const Mon = require('../lib/perfh');
-const syncMon = new Mon();
-const asyncMon = new Mon();
+const mon = new Mon();
 
 function syncHash(cb) {
   const start = new Date()
@@ -16,13 +15,14 @@ function asyncHash(cb) {
   bcrypt.hash("hash me!", hashRounds, cb.bind(null, start));
 }
 
-syncMon.enable();
+mon.enable();
 syncHash(start => {
 	console.log(`synchash ${new Date() - start} ms`);
-	syncMon.disable();
-	asyncMon.enable();
+	mon.avg();
+	mon.reset();
 	asyncHash(start => {
 		console.log(`asynchash ${new Date() - start} ms`);
-		asyncMon.disable();
+		mon.avg();
+		mon.disable();
 	});
 });
