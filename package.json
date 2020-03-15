@@ -1,0 +1,27 @@
+{
+  "name": "evt-loop-mon",
+  "version": "1.0.0",
+  "description": "nodejs event loop monitoring",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karlpokus/evt-loop-mon.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/karlpokus/evt-loop-mon/issues"
+  },
+  "homepage": "https://github.com/karlpokus/evt-loop-mon#readme",
+  "dependencies": {
+    "bcrypt": "^4.0.1",
+    "bcryptjs": "^2.4.3"
+  }
+}
